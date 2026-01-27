@@ -1,0 +1,17 @@
+{
+  "name": "pichub-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "valaxy dev", "build": "valaxy build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "valaxy": "^0.26.13",
+    "valaxy-theme-press": "^0.26.13",
+    "vue": "^3.5.27"
+  }
+}
