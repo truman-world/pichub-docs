@@ -34,6 +34,16 @@ export default defineValaxyConfig<UserThemeConfig>({
             },
         },
 
+        sidebar: [
+            {
+                text: '及你太美',
+                items: [
+                    { text: '介绍', link: '/guide/intro' },
+                    { text: '快速开始', link: '/guide/started' },
+                ],
+            },
+        ],
+
         pages: [
             {
                 name: '我的小伙伴们',
