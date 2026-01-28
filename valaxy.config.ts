@@ -1,5 +1,6 @@
 import { defineValaxyConfig } from 'valaxy'
 import type { UserThemeConfig } from 'valaxy-theme-press'
+import { addonAlgolia } from 'valaxy-addon-algolia'
 
 // add icons what you will need
 const safelist = [
@@ -11,6 +12,10 @@ const safelist = [
  */
 export default defineValaxyConfig<UserThemeConfig>({
     // site config see site.config.ts
+
+    addons: [
+        addonAlgolia(),
+    ],
 
     siteConfig: {
         title: 'PicHub Docs',
