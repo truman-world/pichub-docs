@@ -40,6 +40,8 @@ export default defineValaxyConfig<UserThemeConfig>({
                 items: [
                     { text: '介绍', link: '/guide/intro' },
                     { text: '快速开始', link: '/guide/started' },
+                    { text: '配置指南', link: '/guide/configuration' },
+                    { text: '常见问题', link: '/guide/faq' },
                 ],
             },
         ],
