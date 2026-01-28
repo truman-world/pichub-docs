@@ -1,26 +1,17 @@
----
-title: 快速开始
-icon: i-ri-rocket-line
----
+# 快速开始
 
-# 🚀 快速开始
+本指南将帮助你在 5 分钟内运行 PicHub。
 
-只需几分钟，即可在您的服务器上部署 PicHub。
+## 环境要求
 
-## 📋 环境要求
+- PHP 8.2 或更高版本
+- Composer 2.x
+- MySQL 8.0+ 或 MariaDB 10.6+
+- Redis (可选，推荐用于生产环境)
 
-在开始之前，请确保您的服务器满足以下要求：
-
-- **PHP**: >= 8.2
-- **MySQL**: >= 8.0
-- **Web Server**: Nginx (推荐) 或 Apache
-- **Extensions**: BCMath, Ctype, Fileinfo, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML
-
-## 📦 安装步骤
+## 安装步骤
 
 ### 1. 获取代码
-
-通过 Git 克隆仓库到您的 Web 根目录：
 
 ```bash
 git clone https://github.com/truman-world/PicHub.git
@@ -29,41 +20,147 @@ cd PicHub
 
 ### 2. 安装依赖
 
-使用 Composer 安装 PHP 依赖：
-
 ```bash
-composer install --no-dev --optimize-autoloader
+composer install
 ```
 
-### 3. 目录权限
-
-确保 Web 服务器 (如 `www-data`) 对以下目录有写入权限：
+### 3. 配置环境
 
 ```bash
-chown -R www-data:www-data storage bootstrap/cache
-chmod -R 775 storage bootstrap/cache
+cp .env.example .env
+php artisan key:generate
 ```
 
-### 4. 运行安装向导
+编辑 `.env` 文件，配置数据库连接：
 
-1.  将 Web 服务器的根目录指向 `public` 文件夹。
-2.  在浏览器中访问您的域名 (例如 `https://your-pichub.com`)。
-3.  系统会自动检测到尚未安装，并跳转至 `/install` 向导页面。
-4.  跟随屏幕指引完成环境检测、数据库配置和管理员账号创建。
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pichub
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
 
-### 5. 完成！
-
-安装完成后，您将自动登录到 PicHub 仪表盘。尽情探索吧！
-
-::: tip 💡 提示
-为了安全起见，安装完成后，所有的敏感配置都会被写入 `.env` 文件，同时会生成 `storage/installed` 锁文件以防止重复安装。
-:::
-
-## 🔄 升级
+### 4. 启动应用
 
 ```bash
-git pull origin main
-composer install --no-dev
-php artisan migrate --force
-php artisan view:clear
+php artisan serve
 ```
+
+访问 `http://localhost:8000/install` 启动图形化安装向导。
+
+## 图形化安装向导
+
+安装向导会自动完成以下步骤：
+
+1. **环境检测**: 检查 PHP 版本、扩展、文件权限
+2. **数据库配置**: 验证数据库连接
+3. **数据库迁移**: 创建必要的数据表
+4. **管理员账户**: 设置初始管理员用户
+
+完成后即可登录后台管理系统。
+
+## 生产环境部署
+
+生产环境建议使用 Nginx 或 Apache 作为 Web 服务器。
+
+### Nginx 配置示例
+
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com;
+    root /var/www/pichub/public;
+
+    index index.php;
+    charset utf-8;
+
+    client_max_body_size 100M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+
+### 队列和定时任务
+
+PicHub 使用队列处理图片压缩、邮件发送等耗时任务。
+
+**配置 Supervisor**:
+
+```ini
+[program:pichub-worker]
+command=php /var/www/pichub/artisan queue:work redis --sleep=3 --tries=3
+autostart=true
+autorestart=true
+user=www-data
+redirect_stderr=true
+stdout_logfile=/var/www/pichub/storage/logs/worker.log
+```
+
+**配置 Crontab**:
+
+```bash
+* * * * * cd /var/www/pichub && php artisan schedule:run >> /dev/null 2>&1
+```
+
+## 常见配置
+
+### 存储驱动
+
+默认使用本地存储，可切换到云存储：
+
+```env
+# 阿里云 OSS
+FILESYSTEM_DISK=oss
+ALIYUN_OSS_ACCESS_KEY_ID=your_key
+ALIYUN_OSS_ACCESS_KEY_SECRET=your_secret
+ALIYUN_OSS_BUCKET=your_bucket
+ALIYUN_OSS_ENDPOINT=oss-cn-hangzhou.aliyuncs.com
+
+# AWS S3
+FILESYSTEM_DISK=s3
+AWS_ACCESS_KEY_ID=your_key
+AWS_SECRET_ACCESS_KEY=your_secret
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=your_bucket
+```
+
+### 队列驱动
+
+生产环境建议使用 Redis：
+
+```env
+QUEUE_CONNECTION=redis
+```
+
+### 缓存驱动
+
+```env
+CACHE_DRIVER=redis
+SESSION_DRIVER=redis
+```
+
+## 下一步
+
+- [部署指南](./deployment.md) - 详细的生产环境部署教程
+- [API 文档](./api.md) - 了解如何通过 API 使用 PicHub
+- [配置指南](./configuration.md) - 环境变量详细说明
+- [常见问题](./faq.md) - 疑难解答
+
+## 需要帮助？
+
+- GitHub Issues: [https://github.com/truman-world/PicHub/issues](https://github.com/truman-world/PicHub/issues)
+- 文档: [https://doc.pichub.com](https://doc.pichub.com)
