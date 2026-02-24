@@ -46,9 +46,17 @@ export default defineValaxyConfig<UserThemeConfig>({
                 text: '指南',
                 items: [
                     { text: '部署指南', link: '/guide/deployment' },
+                    { text: '存储配置', link: '/guide/storage' },
                     { text: 'API 文档', link: '/guide/api' },
                     { text: '配置指南', link: '/guide/configuration' },
+                    { text: '故障排查', link: '/guide/troubleshooting' },
                     { text: '常见问题', link: '/guide/faq' },
+                ],
+            },
+            {
+                text: '社区',
+                items: [
+                    { text: '贡献指南', link: '/guide/contributing' },
                 ],
             },
         ],
