@@ -2,7 +2,7 @@
 
 PicHub 提供完整的 RESTful API，支持通过编程方式上传、管理和检索图片。
 
-## 🔑 认证机制
+## 认证机制
 
 PicHub API 支持两种认证方式：
 
@@ -35,7 +35,7 @@ curl -H "Authorization: Bearer YOUR_API_TOKEN" \
 
 ---
 
-## 📤 图片上传
+## 图片上传
 
 ### 上传单张图片
 
@@ -144,7 +144,7 @@ curl -X POST https://your-domain.com/api/upload/batch \
 
 ---
 
-## 📋 图片管理
+## 图片管理
 
 ### 获取图片列表
 
@@ -275,7 +275,7 @@ curl -X DELETE https://your-domain.com/api/images/12345 \
 
 ---
 
-## 📁 相册管理
+## 相册管理
 
 ### 获取相册列表
 
@@ -331,7 +331,7 @@ curl -H "Authorization: Bearer YOUR_API_TOKEN" \
 
 ---
 
-## 👤 用户信息
+## 用户信息
 
 ### 获取当前用户信息
 
@@ -376,7 +376,7 @@ curl -H "Authorization: Bearer YOUR_API_TOKEN" \
 
 ---
 
-## 🔔 Webhook 配置
+## Webhook 配置
 
 PicHub 支持在特定事件发生时向您的服务器发送 Webhook 通知。
 
@@ -422,7 +422,7 @@ if ($signature === $_SERVER['HTTP_X_PICHUB_SIGNATURE']) {
 
 ---
 
-## ⚙️ 错误代码
+## 错误代码
 
 | 状态码 | 说明 |
 |-------|-----|
@@ -438,7 +438,7 @@ if ($signature === $_SERVER['HTTP_X_PICHUB_SIGNATURE']) {
 
 ---
 
-## 🔧 速率限制
+## 速率限制
 
 为保障服务稳定性，API 调用受以下限制：
 
@@ -452,7 +452,7 @@ if ($signature === $_SERVER['HTTP_X_PICHUB_SIGNATURE']) {
 
 ---
 
-## 💡 SDK 和工具
+## SDK 和工具
 
 ### 官方 SDK
 - **PHP**: `composer require pichub/php-sdk`
@@ -466,10 +466,10 @@ if ($signature === $_SERVER['HTTP_X_PICHUB_SIGNATURE']) {
 
 ---
 
-## 📚 相关文档
+## 相关文档
 
-- [部署指南](./deployment.md) - 如何搭建 PicHub
-- [配置指南](./configuration.md) - 环境变量说明
-- [常见问题](./faq.md) - 疑难解答
+- [安装部署](/guide/deployment) — 如何搭建 PicHub
+- [基础设置](/guide/settings) — 环境变量说明
+- [常见问题](/guide/faq) — 疑难解答
 
 **需要帮助？** 访问 [GitHub Issues](https://github.com/truman-world/PicHub/issues)

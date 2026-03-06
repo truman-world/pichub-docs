@@ -1,0 +1,97 @@
+/* PicHub Docs - Global Style Overrides */
+
+/* Feature cards - match clawd.org.cn soft gray style */
+.press-feature {
+  background-color: #f6f6f7 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  transition: all 0.25s ease;
+}
+
+.press-feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.dark .press-feature {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dark .press-feature:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature card title */
+.press-feature .title {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: var(--va-c-text) !important;
+}
+
+/* Feature card details */
+.press-feature .details {
+  color: #67676c !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.dark .press-feature .details {
+  color: var(--va-c-text-lighter) !important;
+}
+
+/* Home page content sections */
+.press-home .valaxy-md {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Consistent heading style in home content */
+.press-home .valaxy-md h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--va-c-divider);
+}
+
+/* Table styling in home page */
+.press-home .valaxy-md table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.press-home .valaxy-md th,
+.press-home .valaxy-md td {
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--va-c-divider);
+}
+
+.press-home .valaxy-md th {
+  font-weight: 600;
+  background: #f6f6f7;
+}
+
+.dark .press-home .valaxy-md th {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Code block in home page */
+.press-home .valaxy-md pre {
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+/* List items in home content */
+.press-home .valaxy-md ul {
+  padding-left: 20px;
+}
+
+.press-home .valaxy-md li {
+  margin: 8px 0;
+  line-height: 1.6;
+}

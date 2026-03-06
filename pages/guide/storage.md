@@ -30,7 +30,7 @@ FILESYSTEM_DISK=local
 php artisan storage:link
 ```
 
-> ⚠️ **注意**：本地存储受服务器磁盘限制，不支持 CDN 加速，不推荐用于生产环境大流量场景。
+> **注意**：本地存储受服务器磁盘限制，不支持 CDN 加速，不推荐用于生产环境大流量场景。
 
 ---
 
@@ -168,6 +168,6 @@ echo Storage::disk('s3')->url('test.txt');
 
 ## 下一步
 
-- [部署指南](./deployment.md) — 查看完整服务器配置
-- [配置指南](./configuration.md) — 所有 `.env` 变量说明
-- [故障排查](./troubleshooting.md) — 存储问题排查
+- [安装部署](/guide/deployment) — 查看完整服务器配置
+- [基础设置](/guide/settings) — 所有 `.env` 变量说明
+- [故障排查](/guide/troubleshooting) — 存储问题排查

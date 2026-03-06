@@ -6,26 +6,43 @@ const fm = useFrontmatter()
 
 <template>
   <div class="hero-section">
-    <div class="hero-content">
-      <h1 v-if="fm.hero?.name" class="hero-name">
-        {{ fm.hero.name }}
-      </h1>
-      <p v-if="fm.hero?.text" class="hero-text">
-        {{ fm.hero.text }}
-      </p>
-      <p v-if="fm.hero?.tagline" class="hero-tagline">
-        {{ fm.hero.tagline }}
-      </p>
-      <div v-if="fm.hero?.actions" class="hero-actions">
-        <template v-for="action in fm.hero.actions" :key="action.link">
-          <AppLink
-            :to="action.link"
-            class="hero-btn"
-            :class="action.theme === 'brand' ? 'hero-btn-brand' : 'hero-btn-alt'"
-          >
-            {{ action.text }}
-          </AppLink>
-        </template>
+    <div class="hero-container">
+      <div class="hero-content">
+        <!-- Version badge -->
+        <a
+          v-if="fm.hero?.badge"
+          :href="fm.hero.badge.link || '#'"
+          class="hero-badge"
+        >
+          {{ fm.hero.badge.text }}
+        </a>
+
+        <!-- Title -->
+        <h1 v-if="fm.hero?.name" class="hero-name">
+          <span class="hero-name-brand">{{ fm.hero.name }}</span>
+          <template v-if="fm.hero?.text">
+            <br>
+            <span class="hero-name-text">{{ fm.hero.text }}</span>
+          </template>
+        </h1>
+
+        <!-- Tagline / Description -->
+        <p v-if="fm.hero?.tagline" class="hero-tagline">
+          {{ fm.hero.tagline }}
+        </p>
+
+        <!-- Action buttons -->
+        <div v-if="fm.hero?.actions" class="hero-actions">
+          <template v-for="action in fm.hero.actions" :key="action.link">
+            <AppLink
+              :to="action.link"
+              class="hero-btn"
+              :class="action.theme === 'brand' ? 'hero-btn-brand' : 'hero-btn-alt'"
+            >
+              {{ action.text }}
+            </AppLink>
+          </template>
+        </div>
       </div>
     </div>
   </div>
@@ -33,39 +50,75 @@ const fm = useFrontmatter()
 
 <style scoped>
 .hero-section {
-  padding: 48px 24px 40px;
+  padding: 64px 24px 48px;
   text-align: center;
-  max-width: 700px;
+}
+
+.hero-container {
+  max-width: 960px;
   margin: 0 auto;
 }
 
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Version badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #5672CD;
+  background: rgba(86, 114, 205, 0.08);
+  border: 1px solid rgba(86, 114, 205, 0.2);
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: all 0.2s;
+}
+
+.hero-badge:hover {
+  background: rgba(86, 114, 205, 0.14);
+  border-color: rgba(86, 114, 205, 0.3);
+}
+
+/* Title */
 .hero-name {
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 12px;
-}
-
-.hero-text {
-  font-size: 1.5rem;
+  font-size: 48px;
   font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.hero-name-brand {
+  color: #3451B2;
+}
+
+.dark .hero-name-brand {
+  color: #8da2de;
+}
+
+.hero-name-text {
   color: var(--va-c-text);
-  margin-bottom: 8px;
-  line-height: 1.3;
 }
 
+/* Tagline */
 .hero-tagline {
-  font-size: 1.1rem;
-  color: var(--va-c-text-lighter);
-  line-height: 1.5;
-  margin-bottom: 28px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--va-c-text-lighter, #67676C);
+  line-height: 1.6;
+  max-width: 560px;
+  margin-bottom: 32px;
 }
 
+/* Action buttons */
 .hero-actions {
   display: flex;
   gap: 12px;
@@ -74,51 +127,63 @@ const fm = useFrontmatter()
 }
 
 .hero-btn {
-  display: inline-block;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 28px;
+  border-radius: 20px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.25s;
 }
 
 .hero-btn-brand {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: #5672CD;
   color: #fff;
 }
 
 .hero-btn-brand:hover {
-  opacity: 0.9;
+  background: #4a63b8;
+  box-shadow: 0 6px 20px rgba(86, 114, 205, 0.25);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .hero-btn-alt {
-  background: var(--va-c-bg-soft);
+  background: #F1F1F1;
+  color: #3C3C43;
+}
+
+.dark .hero-btn-alt {
+  background: rgba(255, 255, 255, 0.08);
   color: var(--va-c-text);
-  border: 1px solid var(--va-c-divider);
 }
 
 .hero-btn-alt:hover {
-  border-color: var(--va-c-text-lighter);
+  background: #E8E8E8;
 }
 
+.dark .hero-btn-alt:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Responsive */
 @media (max-width: 640px) {
   .hero-section {
-    padding: 32px 16px 24px;
+    padding: 40px 16px 32px;
   }
 
   .hero-name {
-    font-size: 2.2rem;
-  }
-
-  .hero-text {
-    font-size: 1.2rem;
+    font-size: 32px;
   }
 
   .hero-tagline {
-    font-size: 1rem;
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    padding: 10px 22px;
+    font-size: 14px;
   }
 }
 </style>
