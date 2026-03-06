@@ -4,19 +4,19 @@
 
 ---
 
-## 🌟 如何贡献
+## 如何贡献
 
 我们欢迎以下形式的贡献：
 
-- 🐛 **报告 Bug** — 发现问题，提交 Issue
-- 💡 **功能建议** — 有好想法，发起 Discussion
-- 📝 **改进文档** — 修正错误，补充说明
-- 🔧 **提交代码** — 修复 Bug 或开发新功能
-- 🌍 **翻译** — 帮助我们支持更多语言
+- **报告 Bug** — 发现问题，提交 Issue
+- **功能建议** — 有好想法，发起 Discussion
+- **改进文档** — 修正错误，补充说明
+- **提交代码** — 修复 Bug 或开发新功能
+- **翻译** — 帮助我们支持更多语言
 
 ---
 
-## 🚀 快速开始（本地开发）
+## 快速开始（本地开发）
 
 ### 1. Fork 并克隆仓库
 
@@ -68,7 +68,7 @@ npm run dev
 
 ---
 
-## 📋 提交 Pull Request
+## 提交 Pull Request
 
 ### 分支命名规范
 
@@ -101,7 +101,7 @@ refactor: extract storage driver logic to service
 
 ---
 
-## 🧪 运行测试
+## 运行测试
 
 ```bash
 # 运行全部测试
@@ -116,7 +116,7 @@ php artisan test --coverage
 
 ---
 
-## 📐 代码规范
+## 代码规范
 
 项目使用 **PSR-12** 代码风格。
 
@@ -130,7 +130,7 @@ php artisan test --coverage
 
 ---
 
-## 🌍 添加翻译
+## 添加翻译
 
 翻译文件位于 `lang/` 目录：
 
@@ -149,7 +149,7 @@ lang/
 
 ---
 
-## ❓ 有问题？
+## 有问题？
 
 - 先搜索 [现有 Issues](https://github.com/truman-world/PicHub/issues)
 - 查看 [Discussions](https://github.com/truman-world/PicHub/discussions)
@@ -157,4 +157,4 @@ lang/
 
 ---
 
-再次感谢你的贡献！每一个 PR，无论大小，都让 PicHub 变得更好 🙌
+再次感谢你的贡献！每一个 PR，无论大小，都让 PicHub 变得更好。

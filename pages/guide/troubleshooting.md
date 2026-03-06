@@ -4,7 +4,7 @@
 
 ---
 
-## 🔴 安装问题
+## 安装问题
 
 ### 访问 `/install` 显示 404
 
@@ -32,7 +32,7 @@ touch /var/www/pichub/storage/app/installed
 
 ---
 
-## 🔴 上传问题
+## 上传问题
 
 ### 上传失败 / 超出大小限制
 
@@ -87,7 +87,7 @@ tail -f storage/logs/laravel.log | grep -i "oss\|s3\|cos\|storage"
 
 ---
 
-## 🔴 页面错误
+## 页面错误
 
 ### 500 Internal Server Error
 
@@ -138,7 +138,7 @@ redis-cli ping  # 应返回 PONG
 
 ---
 
-## 🔴 邮件问题
+## 邮件问题
 
 ### 注册/密码重置邮件发不出去
 
@@ -151,7 +151,7 @@ grep -i "mail\|smtp" storage/logs/laravel.log | tail -20
 
 ---
 
-## 🔴 队列问题
+## 队列问题
 
 ### 图片处理/水印不生效
 
@@ -190,7 +190,7 @@ php artisan schedule:run
 
 ---
 
-## 🔴 性能问题
+## 性能问题
 
 ### 页面加载慢
 
