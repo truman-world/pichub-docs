@@ -27,7 +27,7 @@ export default defineValaxyConfig<UserThemeConfig>({
 
     themeConfig: {
         banner: {
-            enable: true,
+            enable: false,
             title: 'PicHub',
         },
 
