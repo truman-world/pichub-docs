@@ -20,7 +20,7 @@ export default defineValaxyConfig<UserThemeConfig>({
     siteConfig: {
         title: 'PicHub Docs',
         description: 'Documentation for PicHub',
-        url: 'https://doc.pichub.com',
+        url: 'https://pichub-docs.vercel.app',
     },
 
     theme: 'press',
@@ -29,50 +29,43 @@ export default defineValaxyConfig<UserThemeConfig>({
         banner: {
             enable: true,
             title: 'PicHub',
-            cloud: {
-                enable: true,
-            },
         },
 
         sidebar: [
             {
-                text: '开始',
+                text: '入门',
                 items: [
                     { text: '介绍', link: '/guide/intro' },
                     { text: '快速开始', link: '/guide/getting-started' },
+                    { text: '安装部署', link: '/guide/deployment' },
+                    { text: '升级', link: '/guide/upgrade' },
                 ],
             },
             {
-                text: '指南',
+                text: '配置',
                 items: [
-                    { text: '部署指南', link: '/guide/deployment' },
+                    { text: '基础设置', link: '/guide/settings' },
                     { text: '存储配置', link: '/guide/storage' },
-                    { text: 'API 文档', link: '/guide/api' },
-                    { text: '配置指南', link: '/guide/configuration' },
-                    { text: '故障排查', link: '/guide/troubleshooting' },
-                    { text: '常见问题', link: '/guide/faq' },
+                    { text: '图片处理', link: '/guide/image-processing' },
+                    { text: '内容审核', link: '/guide/image-security' },
+                    { text: '用户与角色', link: '/guide/users' },
                 ],
             },
             {
-                text: '社区',
+                text: 'API',
                 items: [
+                    { text: 'API 文档', link: '/guide/api' },
+                ],
+            },
+            {
+                text: '更多',
+                items: [
+                    { text: '支付与订阅', link: '/guide/payments' },
+                    { text: '进阶配置', link: '/guide/advanced' },
+                    { text: '常见问题', link: '/guide/faq' },
+                    { text: '故障排查', link: '/guide/troubleshooting' },
                     { text: '贡献指南', link: '/guide/contributing' },
                 ],
-            },
-        ],
-
-        pages: [
-            {
-                name: '我的小伙伴们',
-                id: 'friends',
-                icon: 'i-ri-group-line',
-                color: '#0078E7',
-            },
-            {
-                name: '喜欢的项目',
-                id: 'projects',
-                icon: 'i-ri-github-line',
-                color: '#b967ff',
             },
         ],
 

@@ -153,7 +153,7 @@ lang/
 
 - 先搜索 [现有 Issues](https://github.com/truman-world/PicHub/issues)
 - 查看 [Discussions](https://github.com/truman-world/PicHub/discussions)
-- 联系维护者：[support@pichub.com](mailto:support@pichub.com)
+- 联系维护者：[support@pichub.app](mailto:support@pichub.app)
 
 ---
 
