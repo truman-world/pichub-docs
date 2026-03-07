@@ -24,7 +24,7 @@ features:
     icon: i-ri-database-2-line
   - title: REST API
     details: Token 和 API Key 双认证，完美兼容 ShareX、uPic、PicGo 等主流客户端。
-    icon: i-ri-api-line
+    icon: i-ri-code-box-line
   - title: 内容审核
     details: 内置 NsfwJS 和 OpenAI 审核驱动，上传时自动检测违规内容并立即拦截。
     icon: i-ri-shield-check-line
@@ -33,7 +33,7 @@ features:
     icon: i-ri-dashboard-3-line
   - title: Docker 部署
     details: 官方自带 docker-compose.yml，一行命令即可启动完整环境（MySQL + Redis）。
-    icon: i-ri-docker-line
+    icon: i-ri-box-3-line
   - title: MIT 协议
     details: 代码完全公开，可自由使用、修改和二次分发。拥有全部数据控制权。
     icon: i-ri-open-source-line

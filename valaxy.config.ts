@@ -6,10 +6,10 @@ import { addonAlgolia } from 'valaxy-addon-algolia'
 const safelist = [
     'i-ri-home-line',
     'i-ri-database-2-line',
-    'i-ri-api-line',
+    'i-ri-code-box-line',
     'i-ri-shield-check-line',
     'i-ri-dashboard-3-line',
-    'i-ri-docker-line',
+    'i-ri-box-3-line',
     'i-ri-open-source-line',
     'i-ri-focus-3-line',
     'i-ri-stack-line',
