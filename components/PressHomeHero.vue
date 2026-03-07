@@ -36,7 +36,7 @@ const fm = useFrontmatter()
       
       <div class="hero-image-area">
         <div class="hero-illustration">
-          <img src="https://pichub.app/README.mini.png" class="hero-img" alt="PicHub Illustration" />
+          <img src="/README.mini.png" class="hero-img" alt="PicHub Illustration" />
         </div>
       </div>
     </div>
