@@ -6,11 +6,15 @@
   border: none !important;
   border-radius: 12px !important;
   transition: all 0.25s ease;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
 .press-feature:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .dark .press-feature {
@@ -21,10 +25,35 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
+/* Feature card Icon box */
+.press-feature .icon {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 8px !important;
+  background-color: #e5e5e5 !important;
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 20px !important;
+  margin-bottom: 20px !important;
+  color: #3C3C43 !important;
+}
+
+.dark .press-feature .icon {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
 /* Feature card title */
 .press-feature .title {
   font-weight: 700 !important;
   font-size: 16px !important;
+  color: #3C3C43 !important;
+  margin-bottom: 8px !important;
+  line-height: 24px !important;
+}
+
+.dark .press-feature .title {
   color: var(--va-c-text) !important;
 }
 
@@ -37,6 +66,18 @@
 
 .dark .press-feature .details {
   color: var(--va-c-text-lighter) !important;
+}
+
+/* Home page feature grid to exactly 3 columns on large screens */
+@media (min-width: 1024px) {
+  .press-features {
+    max-width: 1152px !important;
+    margin: 0 auto !important;
+  }
+
+  .press-features .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
 }
 
 /* Home page content sections */
