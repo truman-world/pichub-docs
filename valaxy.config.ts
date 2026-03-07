@@ -37,6 +37,7 @@ export default defineValaxyConfig<UserThemeConfig>({
     theme: 'press',
 
     themeConfig: {
+        logo: '/logo.png',
 
         nav: [
             { text: '首页', link: '/' },
