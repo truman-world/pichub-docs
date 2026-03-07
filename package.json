@@ -10,9 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "overrides": {
-    "jsdom": "~22.1.0"
-  },
   "dependencies": {
     "valaxy": "^0.26.13",
     "valaxy-addon-algolia": "^0.2.0",
