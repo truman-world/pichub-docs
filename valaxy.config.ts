@@ -31,15 +31,25 @@ export default defineValaxyConfig<UserThemeConfig>({
         title: 'PicHub Docs',
         description: 'Documentation for PicHub',
         url: 'https://pichub-docs.vercel.app',
+        favicon: '/favicon.ico',
     },
 
     theme: 'press',
 
     themeConfig: {
-        banner: {
-            enable: false,
-            title: 'PicHub',
-        },
+        logo: '/logo.png',
+
+        nav: [
+            { text: '首页', link: '/' },
+            { text: '快速开始', link: '/guide/getting-started' },
+            { text: '安装', link: '/guide/deployment' },
+            { text: '社区论坛', link: '/forum' },
+            { text: '版本发布', link: 'https://github.com/truman-world/PicHub/releases' },
+        ],
+
+        socialLinks: [
+            { icon: 'i-ri-github-fill', link: 'https://github.com/truman-world/PicHub' },
+        ],
 
         sidebar: [
             {

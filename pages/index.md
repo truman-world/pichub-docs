@@ -62,19 +62,6 @@ features:
   </div>
 </div>
 
-<div class="px-8 py-10 bg-[rgba(86,114,205,0.06)] dark:bg-[rgba(100,129,234,0.1)] rounded-3xl my-16 text-center border border-[rgba(86,114,205,0.1)]">
-  <div class="inline-flex justify-center items-center w-12 h-12 rounded-full bg-[#5672CD] text-white mb-4">
-    <div class="i-ri-rocket-line text-2xl"></div>
-  </div>
-  <h2 class="text-2xl font-bold mb-6 border-none pb-0 mt-0">快速体验</h2>
-  <div class="text-left bg-[#1e1e20] text-gray-300 p-5 rounded-xl font-mono text-sm max-w-2xl mx-auto mb-8 shadow-xl overflow-x-auto">
-    <div class="text-gray-500 mb-2"># 官方 Docker 一键启动版</div>
-    <div><span class="text-pink-400">git clone</span> https://github.com/truman-world/PicHub.git</div>
-    <div><span class="text-pink-400">cd</span> PicHub</div>
-    <div><span class="text-pink-400">docker compose</span> up -d</div>
-    <div class="text-gray-500 mt-2"># 访问 http://localhost:8000/install 完成安装</div>
-  </div>
-  <a href="/guide/getting-started" class="inline-flex items-center gap-2 bg-[#5672CD] hover:bg-[#4a63b8] dark:hover:bg-[#6481EA] text-white px-8 py-3 rounded-full font-semibold transition-all hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(86,114,205,0.3)] no-underline">
-    查看详细部署指南 <div class="i-ri-arrow-right-line"></div>
-  </a>
+<div class="my-16">
+  <QuickStartTabs />
 </div>
