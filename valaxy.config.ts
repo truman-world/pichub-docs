@@ -5,6 +5,16 @@ import { addonAlgolia } from 'valaxy-addon-algolia'
 // add icons what you will need
 const safelist = [
     'i-ri-home-line',
+    'i-ri-database-2-line',
+    'i-ri-api-line',
+    'i-ri-shield-check-line',
+    'i-ri-dashboard-3-line',
+    'i-ri-docker-line',
+    'i-ri-open-source-line',
+    'i-ri-focus-3-line',
+    'i-ri-stack-line',
+    'i-ri-rocket-line',
+    'i-ri-arrow-right-line',
 ]
 
 /**

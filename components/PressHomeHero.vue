@@ -36,9 +36,7 @@ const fm = useFrontmatter()
       
       <div class="hero-image-area">
         <div class="hero-illustration">
-          <svg viewBox="0 0 24 24" class="hero-svg">
-            <path fill="currentColor" d="M19.35 10.04C18.67 6.59 15.64 4 12 4C9.11 4 6.6 5.64 5.35 8.04C2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5c0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4c0-2.05 1.53-3.76 3.56-3.97l1.07-.11l.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5l1.53.11c1.56.1 2.78 1.41 2.78 2.96c0 1.65-1.35 3-3 3zM14 13h-4v3H8l4 4l4-4h-2v-3z"/>
-          </svg>
+          <img src="https://pichub.app/README.mini.png" class="hero-img" alt="PicHub Illustration" />
         </div>
       </div>
     </div>
@@ -47,7 +45,7 @@ const fm = useFrontmatter()
 
 <style scoped>
 .press-home-hero {
-  padding: 80px 24px 64px;
+  padding: 40px 24px 24px;
 }
 
 .hero-content {
@@ -56,7 +54,7 @@ const fm = useFrontmatter()
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 64px;
+  gap: 32px;
 }
 
 .hero-text-area {
@@ -79,14 +77,13 @@ const fm = useFrontmatter()
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #3451B2;
-  opacity: 0.9;
 }
 
-.hero-svg {
+.hero-img {
   width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 20px 40px rgba(52, 81, 178, 0.2));
+  height: auto;
+  border-radius: 12px;
+  filter: drop-shadow(0 20px 40px rgba(52, 81, 178, 0.15));
   animation: float 6s ease-in-out infinite;
 }
 
