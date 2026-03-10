@@ -2,7 +2,6 @@
 title: 防盗链与原图保护
 ---
 
-# 防盗链与原图保护
 
 PicHub 提供多层次的图片访问控制机制，防止图片被未授权的第三方网站直接引用，同时保护原图不被随意下载。
 
@@ -42,7 +41,6 @@ ALLOWED_DOMAINS=yourdomain.com,cdn.yourdomain.com,blog.yourdomain.com
 除了应用层防盗链，建议在 Nginx 配置中添加额外保护：
 
 ```nginx
-# 防盗链增强 — Nginx 层面
 location ~* \.(jpg|jpeg|png|gif|webp|bmp|svg)$ {
     valid_referers none blocked server_names
         *.yourdomain.com
@@ -94,11 +92,9 @@ PicHub 会自动记录每次图片访问的信息：
 ## 完整配置示例
 
 ```env
-# 防盗链
 ENABLE_HOTLINK_PROTECTION=true
 ALLOWED_DOMAINS=mysite.com,blog.mysite.com,cdn.mysite.com
 
-# API 速率限制（防刷接口）
 API_RATE_LIMIT=60
 ```
 

@@ -2,7 +2,6 @@
 title: 消息推送
 ---
 
-# 消息推送 (PushPlus)
 
 PicHub 集成了 [PushPlus](https://www.pushplus.plus/) 推送服务，可将系统关键事件实时推送到你的微信。
 

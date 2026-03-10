@@ -2,7 +2,6 @@
 title: Webhook 配置
 ---
 
-# Webhook 配置
 
 PicHub 支持 Webhook 通知，当系统中发生特定事件时，自动向你指定的 URL 发送 HTTP POST 请求。
 
