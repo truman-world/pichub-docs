@@ -43,7 +43,6 @@ export default defineValaxyConfig<UserThemeConfig>({
             { text: '首页', link: '/' },
             { text: '快速开始', link: '/guide/getting-started' },
             { text: '安装', link: '/guide/deployment' },
-            { text: '社区论坛', link: '/forum' },
             { text: '版本发布', link: 'https://github.com/truman-world/PicHub/releases' },
         ],
 
