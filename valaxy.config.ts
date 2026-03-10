@@ -59,16 +59,34 @@ export default defineValaxyConfig<UserThemeConfig>({
                     { text: '快速开始', link: '/guide/getting-started' },
                     { text: '安装部署', link: '/guide/deployment' },
                     { text: '升级', link: '/guide/upgrade' },
+                    { text: '迁移指南', link: '/guide/migration' },
                 ],
             },
             {
-                text: '配置',
+                text: '基础配置',
                 items: [
                     { text: '基础设置', link: '/guide/settings' },
                     { text: '存储配置', link: '/guide/storage' },
-                    { text: '图片处理', link: '/guide/image-processing' },
-                    { text: '内容审核', link: '/guide/image-security' },
                     { text: '用户与角色', link: '/guide/users' },
+                    { text: '环境变量参考', link: '/guide/env-reference' },
+                ],
+            },
+            {
+                text: '功能配置',
+                items: [
+                    { text: '图片处理', link: '/guide/image-processing' },
+                    { text: '水印配置', link: '/guide/watermark' },
+                    { text: '内容审核', link: '/guide/image-security' },
+                    { text: '防盗链与原图保护', link: '/guide/hotlink-protection' },
+                    { text: 'Webhook 配置', link: '/guide/webhooks' },
+                    { text: '消息推送', link: '/guide/notifications' },
+                ],
+            },
+            {
+                text: '商业化',
+                items: [
+                    { text: '支付与订阅', link: '/guide/payments' },
+                    { text: '商业授权', link: '/guide/license' },
                 ],
             },
             {
@@ -78,9 +96,8 @@ export default defineValaxyConfig<UserThemeConfig>({
                 ],
             },
             {
-                text: '更多',
+                text: '参考',
                 items: [
-                    { text: '支付与订阅', link: '/guide/payments' },
                     { text: '进阶配置', link: '/guide/advanced' },
                     { text: '常见问题', link: '/guide/faq' },
                     { text: '故障排查', link: '/guide/troubleshooting' },
