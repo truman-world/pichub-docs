@@ -59,7 +59,6 @@ export default defineValaxyConfig<UserThemeConfig>({
                     { text: '快速开始', link: '/guide/getting-started' },
                     { text: '安装部署', link: '/guide/deployment' },
                     { text: '升级', link: '/guide/upgrade' },
-                    { text: '迁移指南', link: '/guide/migration' },
                 ],
             },
             {
